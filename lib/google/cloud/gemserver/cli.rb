@@ -62,7 +62,7 @@ module Google
         method_option :use_proj, type: :string, aliases: "-g", desc:
           "Existing project to deploy gemserver to"
         method_option :use_inst, type: :string, aliases: "-i", desc:
-          "Existing project to deploy gemserver to"
+          "Existing Cloud SQL instance to use"
         def create
           prepare
           Server.new.deploy
@@ -77,7 +77,7 @@ module Google
         method_option :use_proj, type: :string, aliases: "-g", desc:
           "Existing project to deploy gemserver to"
         method_option :use_inst, type: :string, aliases: "-i", desc:
-          "Existing Cloud SQL instance to us"
+          "Existing Cloud SQL instance to use"
         def prepare
           Project.new(options[:use_proj]).create
           CloudSQL.new(options[:use_inst]).run
